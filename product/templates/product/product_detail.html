@@ -3,6 +3,7 @@
 {% block CSS %}
     <link rel="stylesheet" href="{% static "en/css/product-details.css" %}">
 {% endblock CSS %}
+
 {% block body %}
         <!--=====================================
                     BANNER PART START
@@ -34,21 +35,17 @@
                                 <label class="details-label new">{{object.flag}}</label>
                             </div>
                             <ul class="details-preview"> 
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
+                            {% for image in object.product_image.all %}
+                                <li><img src="{{image.image.url}}" alt="product"></li>
+                            {% endfor %}
                             </ul>
                             <ul class="details-thumb">
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                            </ul>
+                                {% for image in object.product_image.all %}
+                                <li><img src="{{image.image.url}}" alt="product"></li>
+                            {% endfor %}      </ul>
                         </div>
                     </div>
+                    
                     <div class="col-lg-6">
                         <div class="details-content">
                             <h3 class="details-name"><a href="#">{{object}}</a></h3>
@@ -75,7 +72,6 @@
                                         <li><a href="#">{{tag}}</a></li>
                                     {% endfor %}
                                 </ul>
-
                             </div>
                             <div class="details-list-group">
                                 <label class="details-list-title">Share:</label>
@@ -102,10 +98,6 @@
                                     <i class="icofont-heart"></i>
                                     <span>add to wish</span>
                                 </a>
-                                <a class="details-compare" href="compare.html" title="Compare This Item">
-                                    <i class="fas fa-random"></i>
-                                    <span>Compare This</span>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -127,31 +119,8 @@
                         <div class="product-details-frame">
                             <h3 class="frame-title">Description</h3>
                             <div class="tab-descrip">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, ex! Incidunt nemo aspernatur fugiat, saepe suscipit sit perferendis illum magnam voluptates aliquid blanditiis, dolor assumenda dolorem ullam harum, doloribus molestiae! Unde voluptas maiores exercitationem aperiam debitis accusantium, placeat vero neque, atque eius numquam incidunt, culpa a odit consequatur nostrum aut nisi quisquam sequi dignissimos sed. Odio necessitatibus officiis repudiandae omnis soluta fugiat aliquam eius quae. Unde, ipsam atque assumenda consequuntur quia alias nulla, cupiditate ab quos eveniet pariatur expedita repellendus fugit. Quisquam fuga et, dolore aut temporibus atque itaque nesciunt reiciendis nobis, deleniti nihil vel qui perferendis molestias aliquam doloremque.</p>
+                                <p>{{object.descripition}}</p>
                             </div>
-                        </div>
-                        <div class="product-details-frame">
-                            <h3 class="frame-title">Spacification</h3>
-                            <table class="table table-bordered">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Product code</th>
-                                        <td>SKU: 101783</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Weight</th>
-                                        <td>1kg, 2kg</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Styles</th>
-                                        <td>@Girly</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Properties</th>
-                                        <td>Short Dress</td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
                         <div class="product-details-frame">
                             <h3 class="frame-title">Reviews (2)</h3>
