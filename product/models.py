@@ -51,7 +51,7 @@ class Review(models.Model):
     user = models.ForeignKey(User,verbose_name=_('User'),related_name='review_author',on_delete=models.SET_NULL,null=True)
     product = models.ForeignKey(Product,verbose_name=_('Product'), related_name='review_product',on_delete=models.CASCADE)
     rate = models.IntegerField(_('Rate'))
-    revuiew = models.CharField(_('Revuiew'),max_length=300)
+    review = models.CharField(_('Revuiew'),max_length=300)
     created_at = models.DateTimeField(_('Created_at'),default=timezone.now())
 
     def __str__(self):
