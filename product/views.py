@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.views.generic import ListView , DetailView
 from .models import Product, ProductImage, Brand, Review
 
+def queryset_depug(request):
+    data = Product.objects.all()
+    return render(request,'product/debug.html',{'data':data})
+
 
 class ProductList(ListView):
     model = Product    #context : object_list , model_list
