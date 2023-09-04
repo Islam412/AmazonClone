@@ -84,7 +84,12 @@ def queryset_depug(request):
     #data = Product.objects.defer(')
     
     #aggregate
-    data = Product.objects.aggregate(Sum('quantity'))
+    #data = Product.objects.aggregate(Sum('quantity'))
+    #data = Product.objects.aggregate(Avg('price'))
+    
+    
+    #annotate 
+    data = Product.objects.annotate(price_with_tax=F('price')*1.2) # add new tower
     return render(request,'product/debug.html',{'data':data}) 
 
 

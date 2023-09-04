@@ -7,15 +7,13 @@
 </head>
 <body>
     <h2>Depug Page</h2>
-    {% comment %}
         <ul>
             {% for item in data %}
             <li>{{item}} - {{item.price}}</li>
             {% endfor %}
         </ul>
-    {% endcomment %}
-
-    <li>{{ }}</li>
-
+        {% comment %}
+            <li>{{data}}</li>#(sum,avg)
+        {% endcomment %}
 </body>
 </html>
