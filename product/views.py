@@ -110,6 +110,7 @@ class ProductDetail(DetailView):
 
 class BrandList(ListView):
     model = Brand        #context : object_list , model_list
+    queryset = Brand.objects.annotate(Product_count=Count('product_name'))
 
 
 class BrandDetail(ListView):
@@ -123,7 +124,7 @@ class BrandDetail(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["brand"] = Brand.objects.get(slug=self.kwargs['slug'])
+        context["brand"] = Brand.objects.filter(slug=self.kwargs['slug']).annotate(Product_count=Count('product_name'))[0]
         return context
     
 
