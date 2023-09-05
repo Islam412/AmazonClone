@@ -385,7 +385,7 @@
                                             <i class="icofont-star{% if object.avg_rate > 2 %}active{% endif %}"></i>
                                             <i class="icofont-star{% if object.avg_rate > 3 %}active{% endif %}"></i>
                                             <i class="icofont-star{% if object.avg_rate > 4 %}active{% endif %}"></i>
-                                            <a href="product-video.html">({{object.review_product|length}})</a>
+                                            <a href="product-video.html">({{object.review_product.all|length}})</a>
                                         </div>
                                         <h6 class="product-name">
                                             <a href="/product/{{object.slug}}">{{object}}</a>
