@@ -95,7 +95,7 @@ def queryset_depug(request):
 
 class ProductList(ListView):
     model = Product    #context : object_list , model_list
-    paginate_by = 30   #select account product in paginate
+    paginate_by = 32   #select account product in paginate
 
 
 
