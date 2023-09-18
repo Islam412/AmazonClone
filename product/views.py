@@ -89,8 +89,8 @@ def queryset_depug(request):
     
     
     #annotate 
-    data = Product.objects.annotate(price_with_tax=F('price')*1.2) # add new tower
-    return render(request,'product/debug.html',{'data':data}) 
+    #data = Product.objects.annotate(price_with_tax=F('price')*1.2) # add new tower
+    #return render(request,'product/debug.html',{'data':data}) 
 
 
 class ProductList(ListView):
