@@ -1,9 +1,10 @@
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from .serializers import ProductSerializers
-from rest_framework import generics
-from .models import Product
 
+from .serializers import ProductSerializers , BrandSerializers
+from rest_framework import generics
+from .models import Product , Brand
+
+
+'''
 @api_view(['GET'])
 def product_list_api(request):
     products = Product.objects.all()[:20] # list
@@ -18,7 +19,7 @@ def product_detail_api(request,product_id):
     data = ProductSerializers(products,context={'request':request}).data # json
     return Response({'product':data})
 
-
+'''
 
 class ProductListAPI(generics.ListCreateAPIView):
     queryset = Product.objects.all()
@@ -28,3 +29,13 @@ class ProductListAPI(generics.ListCreateAPIView):
 class ProductDetailAPI(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializers
+
+
+class BrandListAPI(generics.ListCreateAPIView):
+    queryset = Brand.objects.all()
+    serializer_class = BrandSerializers
+
+
+class BrandDetailAPI(generics.RetrieveAPIView):
+    queryset = Brand.objects.all()
+    serializer_class = BrandSerializers
