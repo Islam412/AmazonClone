@@ -3,7 +3,7 @@ from .models import Product
 
 
 class ProductFilter(filters.FilterSet):
-    class Meta :
+    class Meta:
         model = Product
         fields = {
             'name': ['contains'] ,
