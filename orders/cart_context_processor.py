@@ -1,12 +1,11 @@
 from .models import Cart, CartDetail
 
-
 def get_or_create_cart(request):
     if request.user.is_authenticated:
-        cart, created = Cart.objects.get_or_create(user=request.user, status='InProgress')  # Use '=' instead of '=='
+        cart, created = Cart.objects.get_or_create(user=request.user, status='InProgress')
         if not created:
-            cart_detail = CartDetail.objects.filter(cart=cart)
-            return {'cart_data': cart, 'cart_detail': cart_detail}
+            cart_detail_data = CartDetail.objects.filter(cart=cart)  # Renamed cart_detail to cart_detail_data
+            return {'cart_data': cart, 'cart_detail_data': cart_detail_data}  # Renamed cart_detail to cart_detail_data
         return {'cart_data': cart}
     else:
         return {}
