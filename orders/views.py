@@ -15,6 +15,10 @@ class OrderList(LoginRequiredMixin, ListView):
     
 
 
+def add_to_cart(self):
+    pass
+
+
 @login_required
 def checkout(request):
     cart = Cart.objects.get(user=request.user,status='InProgress')
