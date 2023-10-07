@@ -33,6 +33,12 @@ def remove_from_cart(request,id):
     return redirect('/product/')
 
 
+def remove_from_cart_checkout(request,id):
+    cart_detail = CartDetail.objects.get(id=id)
+    cart_detail.delete()
+    return redirect('/orders/checkout')
+
+
 @login_required
 def checkout(request):
     cart = Cart.objects.get(user=request.user,status='InProgress')
