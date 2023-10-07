@@ -1,11 +1,11 @@
 
-from .serializers import ProductListSerializers , ProductDetailSerializers , BrandDetailSerializers , BrandListSerializers
-from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import filters
 from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
 from .mypaginations import MyPaginations
 from .myfilter import ProductFilter
+from .serializers import ProductListSerializers , ProductDetailSerializers , BrandDetailSerializers , BrandListSerializers
 from .models import Product , Brand
 
 
