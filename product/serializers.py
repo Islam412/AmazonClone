@@ -69,3 +69,7 @@ class BrandDetailSerializers(serializers.ModelSerializer):
         
 
 
+class ProductCartSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ['name','image','price']
