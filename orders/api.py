@@ -86,5 +86,58 @@ class CreateOrderAPI(generics.GenericAPIView):
             cart.save()
             return Response({'message' , 'Order Created Successfully'})
 
+
+# class ApplyCouponAPI(generics.GenericAPIView):
+#     def post(self, request, *args, **kwargs):
+#         user = User.objects.filter(username=self.kwargs['username']).first()
+#         if not user:
+#             return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+#         cart = Cart.objects.filter(user=user, status='InProgress').first()
+#         if not cart:
+#             return Response({'message': 'Cart not found'}, status=status.HTTP_404_NOT_FOUND)
+#         coupon_code = request.data.get('Coupon_code')
+#         coupon = get_object_or_404(Coupon, code=coupon_code)
+#         if coupon.quantity > 0:
+#             today_date = datetime.datetime.today().date()
+#             if coupon.start_date <= today_date <= coupon.end_date:
+#                 coupon_value = cart.cart_total() * coupon.discount / 100
+#                 cart_total = cart.cart_total() - coupon_value
+#                 coupon.quantity -= 1
+#                 coupon.save()
+#                 cart.Coupon = coupon
+#                 cart.total_after_coupon = cart_total
+#                 cart.save()
+#                 cart = Cart.objects.filter(user=user, status='InProgress').first()
+#                 data = CartSerializer(cart).data
+#                 return Response({'message': 'Coupon applied successfully', 'cart': data})
+#             else:
+#                 return Response({'message': 'Coupon date is not valid'})
+#         else:
+#             return Response({'message': 'No coupon found'}, status=status.HTTP_400_BAD_REQUEST)
+
 class ApplyCouponAPI(generics.GenericAPIView):
-    pass
+    def post(self,request,*args, **kwargs):
+        user = User.objects.get(username=self.kwargs['username'])
+        cart = Cart.objects.get(user=user,status='InProgress')
+        
+        coupon = get_object_or_404(Coupon,code=request.data['coupon_code'])  # 404
+        # coupon = Coupon.objects.get(code=request.data['coupon_code'])        # error
+        if coupon and coupon.quantity > 0 :
+            today_date = datetime.datetime.today().date()
+            # if (coupon.start <= today_date < coupon.end ):
+            if today_date >= coupon.start_date and today_date <= coupon.end_date:
+                coupon_value = cart.cart_total() * coupon.discount/100
+                cart_total = cart.cart_total() - coupon_value
+                coupon.quantity -= 1 
+                coupon.save()
+                cart.coupon = coupon
+                cart.total_After_coupon = cart_total
+                cart.save()
+                cart = Cart.objects.get(user=user,status='InProgress')
+                data = CartSerializer(cart).data
+                return Response({'message':'coupon applied successfully' ,'cart':data})
+            else :
+                return Response({'message':'coupon date is not valid'})
+        else :
+            return Response({'message':'no coupon found'})
+
