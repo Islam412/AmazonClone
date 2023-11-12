@@ -3,7 +3,12 @@ from django.views.generic import ListView , DetailView
 from .models import Product, ProductImage, Brand, Review
 from django.db.models import Q , F
 from django.db.models.aggregates import Max,Min,Count,Avg,Sum
+#cashe
+from django.views.decorators.cache import cache_page
 
+
+
+@cache_page(60 * 1) #(sec min h)
 def queryset_depug(request):
     #data = Product.objects.select_related('brand').all() #prefetch_related = many-to-many 
     #filter
@@ -90,7 +95,11 @@ def queryset_depug(request):
     
     #annotate 
     #data = Product.objects.annotate(price_with_tax=F('price')*1.2) # add new tower
-    #return render(request,'product/debug.html',{'data':data}) 
+
+
+    data = Product.objects.all()
+    return render(request,'product/debug.html',{'data':data}) 
+
 
 
 class ProductList(ListView):
