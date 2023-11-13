@@ -6,9 +6,10 @@ from django.db.models.aggregates import Max,Min,Count,Avg,Sum
 #cashe
 from django.views.decorators.cache import cache_page
 
+from.tasks import send_email
 
 
-@cache_page(60 * 1) #(sec min h)
+# @cache_page(60 * 1) #(sec min h)
 def queryset_depug(request):
     #data = Product.objects.select_related('brand').all() #prefetch_related = many-to-many 
     #filter
@@ -97,7 +98,10 @@ def queryset_depug(request):
     #data = Product.objects.annotate(price_with_tax=F('price')*1.2) # add new tower
 
 
-    data = Product.objects.all()
+    data = Product.objects.get(id=100)
+
+    send_email.delay(data)
+
     return render(request,'product/debug.html',{'data':data}) 
 
 
