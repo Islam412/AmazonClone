@@ -5,7 +5,7 @@ from product.models import Product , Brand , Review
 
 
 
-@cache_page(60 * 60 * 24)
+# @cache_page(60 * 60 * 24)
 def home(request):
     brands = Brand.objects.all().annotate(product_count=Count('product_name'))
     sale_broducts = Product.objects.filter(flag='Sale')[:10]

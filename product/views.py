@@ -100,7 +100,7 @@ def queryset_depug(request):
 
     data = Product.objects.get(id=100)
 
-    send_email.delay(data)
+    send_email.delay()
 
     return render(request,'product/debug.html',{'data':data}) 
 
