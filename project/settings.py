@@ -174,13 +174,13 @@ REST_AUTH = {
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOCALE_PATHS = ['locale']
 
-#cache
-CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": "redis://myredis:6379/0",
-    }
-}
+# #cache
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django.core.cache.backends.redis.RedisCache",
+#         "LOCATION": "redis://myredis:6379/0",
+#     }
+# }
 
 
 #celery
@@ -188,6 +188,6 @@ CACHES = {
 # CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 
 
-# docker connet celery and redis
-CELERY_BROKER_URL = 'redis://myredis:6379/0'
-CELERY_RESULT_BACKEND = 'redis://myredis:6379/0'
+# # docker connet celery and redis
+# CELERY_BROKER_URL = 'redis://myredis:6379/0'
+# CELERY_RESULT_BACKEND = 'redis://myredis:6379/0'

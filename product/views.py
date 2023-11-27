@@ -143,3 +143,6 @@ class BrandDetail(ListView):
         return context
     
 
+
+def add_review(request):
+    pass
