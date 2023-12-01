@@ -74,7 +74,7 @@ class Review(models.Model):
     product = models.ForeignKey(Product,verbose_name=_('Product'), related_name='review_product',on_delete=models.CASCADE)
     rate = models.IntegerField(_('Rate'))
     review = models.CharField(_('Review'),max_length=300)
-    created_at = models.DateTimeField(_('Created_at'),default=timezone.now())
+    created_at = models.DateTimeField(_('Created_at'),default=timezone.now)
 
     def __str__(self):
         return f"{self.user} - {self.product}"
