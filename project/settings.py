@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'dj_rest_auth',
     'dj_rest_auth.registration',
+    'drf_yasg',
+
     'product',
     'settings',
     'orders',
@@ -67,6 +69,9 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        # allaw Authantication
+        'rest_framework.authentication.SessionAuthentication',
+        
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     #'DEFAULT_PERMISSION_CLASSES': [
