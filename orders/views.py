@@ -4,6 +4,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404
 
+# used ajax
+from django.http import JsonResponse
+from django.template.loader import render_to_string
+
 import datetime
 from .models import Order , OrderDetail , Cart ,CartDetail ,Coupon
 from product.models import Product
@@ -70,19 +74,29 @@ def checkout(request):
 
                 cart = Cart.objects.get(user=request.user,status='InProgress')
 
-
-                return render(request,'orders/checkout.html',{
+                # coupon with ajax
+                html = render_to_string('include/checkout_table.html',{
                     'cart_detail':cart_detail,
                     'sub_total':cart_total,
                     'cart_total':total,
                     'coupon':coupon_value,
                     'delivery_fee':delivery_fee,
                 })
+                return JsonResponse({'result':html})
+
+
+                # return render(request,'orders/checkout.html',{
+                #     'cart_detail':cart_detail,
+                #     'sub_total':cart_total,
+                #     'cart_total':total,
+                #     'coupon':coupon_value,
+                #     'delivery_fee':delivery_fee,
+                # })
         
-        else:
-            sub_total = cart.cart_total
-            total = delivery_fee + cart.cart_total()
-            coupon = 0
+        # else:
+        #     sub_total = cart.cart_total
+        #     total = delivery_fee + cart.cart_total()
+        #     coupon = 0
 
 
     return render(request,'orders/checkout.html',{
