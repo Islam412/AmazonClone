@@ -4,6 +4,13 @@ orders
 cart
 coupons
 translations
+
+js
+ajax
+
+celery
+caching
+redis
 ______________________________________________________
 
 users
