@@ -1,0 +1,117 @@
+نوف 25 00:50:08 islam-GF63-Thin-10SC systemd[1]: Starting Docker Application Container Engine...
+نوف 25 00:50:09 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:50:09.049265586+02:00" level=info msg="Starting up"
+نوف 25 00:50:09 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:50:09.049716139+02:00" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+نوف 25 00:50:09 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:50:09.132381338+02:00" level=info msg="Loading containers: start."
+نوف 25 00:50:09 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:50:09.428358233+02:00" level=info msg="Loading containers: done."
+نوف 25 00:50:09 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:50:09.459581431+02:00" level=info msg="Docker daemon" commit="24.0.5-0ubuntu1~22.04.1" graphdriver=overlay2 version=24.0.5
+نوف 25 00:50:09 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:50:09.459650034+02:00" level=info msg="Daemon has completed initialization"
+نوف 25 00:50:09 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:50:09.476370124+02:00" level=info msg="API listen on /run/docker.sock"
+نوف 25 00:50:09 islam-GF63-Thin-10SC systemd[1]: Started Docker Application Container Engine.
+نوف 25 00:54:14 islam-GF63-Thin-10SC systemd[1]: Stopping Docker Application Container Engine...
+نوف 25 00:54:14 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:54:14.958774775+02:00" level=info msg="Processing signal 'terminated'"
+نوف 25 00:54:14 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:54:14.959502596+02:00" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+نوف 25 00:54:14 islam-GF63-Thin-10SC dockerd[8375]: time="2023-11-25T00:54:14.959926235+02:00" level=info msg="Daemon shutdown complete"
+نوف 25 00:54:14 islam-GF63-Thin-10SC systemd[1]: docker.service: Deactivated successfully.
+نوف 25 00:54:14 islam-GF63-Thin-10SC systemd[1]: Stopped Docker Application Container Engine.
+نوف 25 00:54:51 islam-GF63-Thin-10SC systemd[1]: Starting Docker Application Container Engine...
+نوف 25 00:54:51 islam-GF63-Thin-10SC dockerd[9947]: time="2023-11-25T00:54:51.091082781+02:00" level=info msg="Starting up"
+نوف 25 00:54:51 islam-GF63-Thin-10SC dockerd[9947]: failed to load listeners: no sockets found via socket activation: make sure the service was started by systemd
+نوف 25 00:54:51 islam-GF63-Thin-10SC systemd[1]: [0;1;39m[0;1;31m[0;1;39mdocker.service: Main process exited, code=exited, status=1/FAILURE[0m
+نوف 25 00:54:51 islam-GF63-Thin-10SC systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mdocker.service: Failed with result 'exit-code'.[0m
+نوف 25 00:54:51 islam-GF63-Thin-10SC systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Docker Application Container Engine.[0m
+نوف 25 00:54:53 islam-GF63-Thin-10SC systemd[1]: docker.service: Scheduled restart job, restart counter is at 1.
+نوف 25 00:54:53 islam-GF63-Thin-10SC systemd[1]: Stopped Docker Application Container Engine.
+نوف 25 00:54:53 islam-GF63-Thin-10SC systemd[1]: Starting Docker Application Container Engine...
+نوف 25 00:54:53 islam-GF63-Thin-10SC dockerd[10008]: time="2023-11-25T00:54:53.185886662+02:00" level=info msg="Starting up"
+نوف 25 00:54:53 islam-GF63-Thin-10SC dockerd[10008]: failed to load listeners: no sockets found via socket activation: make sure the service was started by systemd
+نوف 25 00:54:53 islam-GF63-Thin-10SC systemd[1]: [0;1;39m[0;1;31m[0;1;39mdocker.service: Main process exited, code=exited, status=1/FAILURE[0m
+نوف 25 00:54:53 islam-GF63-Thin-10SC systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mdocker.service: Failed with result 'exit-code'.[0m
+نوف 25 00:54:53 islam-GF63-Thin-10SC systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Docker Application Container Engine.[0m
+نوف 25 00:54:55 islam-GF63-Thin-10SC systemd[1]: docker.service: Scheduled restart job, restart counter is at 2.
+نوف 25 00:54:55 islam-GF63-Thin-10SC systemd[1]: Stopped Docker Application Container Engine.
+نوف 25 00:54:55 islam-GF63-Thin-10SC systemd[1]: Starting Docker Application Container Engine...
+نوف 25 00:54:55 islam-GF63-Thin-10SC dockerd[10024]: time="2023-11-25T00:54:55.415594565+02:00" level=info msg="Starting up"
+نوف 25 00:54:55 islam-GF63-Thin-10SC dockerd[10024]: failed to load listeners: no sockets found via socket activation: make sure the service was started by systemd
+نوف 25 00:54:55 islam-GF63-Thin-10SC systemd[1]: [0;1;39m[0;1;31m[0;1;39mdocker.service: Main process exited, code=exited, status=1/FAILURE[0m
+نوف 25 00:54:55 islam-GF63-Thin-10SC systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mdocker.service: Failed with result 'exit-code'.[0m
+نوف 25 00:54:55 islam-GF63-Thin-10SC systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Docker Application Container Engine.[0m
+نوف 25 00:54:57 islam-GF63-Thin-10SC systemd[1]: docker.service: Scheduled restart job, restart counter is at 3.
+نوف 25 00:54:57 islam-GF63-Thin-10SC systemd[1]: Stopped Docker Application Container Engine.
+نوف 25 00:54:57 islam-GF63-Thin-10SC systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mdocker.service: Start request repeated too quickly.[0m
+نوف 25 00:54:57 islam-GF63-Thin-10SC systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mdocker.service: Failed with result 'exit-code'.[0m
+نوف 25 00:54:57 islam-GF63-Thin-10SC systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Docker Application Container Engine.[0m
+نوف 25 00:56:18 islam-GF63-Thin-10SC systemd[1]: Starting Docker Application Container Engine...
+نوف 25 00:56:18 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T00:56:18.803247732+02:00" level=info msg="Starting up"
+نوف 25 00:56:18 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T00:56:18.803630033+02:00" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+نوف 25 00:56:18 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T00:56:18.811328400+02:00" level=info msg="[graphdriver] using prior storage driver: overlay2"
+نوف 25 00:56:18 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T00:56:18.811430295+02:00" level=info msg="Loading containers: start."
+نوف 25 00:56:19 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T00:56:19.464373473+02:00" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+نوف 25 00:56:19 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T00:56:19.602023857+02:00" level=info msg="Loading containers: done."
+نوف 25 00:56:19 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T00:56:19.608080869+02:00" level=info msg="Docker daemon" commit="24.0.5-0ubuntu1~22.04.1" graphdriver=overlay2 version=24.0.5
+نوف 25 00:56:19 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T00:56:19.608119489+02:00" level=info msg="Daemon has completed initialization"
+نوف 25 00:56:19 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T00:56:19.622388660+02:00" level=info msg="API listen on /run/docker.sock"
+نوف 25 00:56:19 islam-GF63-Thin-10SC systemd[1]: Started Docker Application Container Engine.
+نوف 25 01:02:14 islam-GF63-Thin-10SC systemd[1]: Stopping Docker Application Container Engine...
+نوف 25 01:02:14 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T01:02:14.584275641+02:00" level=info msg="Processing signal 'terminated'"
+نوف 25 01:02:14 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T01:02:14.585004514+02:00" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+نوف 25 01:02:14 islam-GF63-Thin-10SC dockerd[10172]: time="2023-11-25T01:02:14.585309420+02:00" level=info msg="Daemon shutdown complete"
+نوف 25 01:02:14 islam-GF63-Thin-10SC systemd[1]: docker.service: Deactivated successfully.
+نوف 25 01:02:14 islam-GF63-Thin-10SC systemd[1]: Stopped Docker Application Container Engine.
+[0;1;39m-- Boot 82a69041337147ef84faf216b1ac5c64 --[0m
+نوف 25 01:03:27 islam-GF63-Thin-10SC systemd[1]: Starting Docker Application Container Engine...
+نوف 25 01:03:27 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T01:03:27.850742494+02:00" level=info msg="Starting up"
+نوف 25 01:03:27 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T01:03:27.852525023+02:00" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+نوف 25 01:03:27 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T01:03:27.893256096+02:00" level=info msg="[graphdriver] using prior storage driver: overlay2"
+نوف 25 01:03:27 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T01:03:27.893913980+02:00" level=info msg="Loading containers: start."
+نوف 25 01:03:28 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T01:03:28.360029046+02:00" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+نوف 25 01:03:28 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T01:03:28.475421621+02:00" level=info msg="Loading containers: done."
+نوف 25 01:03:28 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T01:03:28.496549885+02:00" level=info msg="Docker daemon" commit="24.0.5-0ubuntu1~22.04.1" graphdriver=overlay2 version=24.0.5
+نوف 25 01:03:28 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T01:03:28.496687156+02:00" level=info msg="Daemon has completed initialization"
+نوف 25 01:03:28 islam-GF63-Thin-10SC systemd[1]: Started Docker Application Container Engine.
+نوف 25 01:03:28 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T01:03:28.513957362+02:00" level=info msg="API listen on /run/docker.sock"
+نوف 25 03:35:01 islam-GF63-Thin-10SC systemd[1]: Stopping Docker Application Container Engine...
+نوف 25 03:35:01 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T03:35:01.399888855+02:00" level=info msg="Processing signal 'terminated'"
+نوف 25 03:35:01 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T03:35:01.400980229+02:00" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+نوف 25 03:35:01 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T03:35:01.401351054+02:00" level=info msg="Daemon shutdown complete"
+نوف 25 03:35:01 islam-GF63-Thin-10SC dockerd[1260]: time="2023-11-25T03:35:01.401408684+02:00" level=info msg="stopping event stream following graceful shutdown" error="context canceled" module=libcontainerd namespace=plugins.moby
+نوف 25 03:35:01 islam-GF63-Thin-10SC systemd[1]: docker.service: Deactivated successfully.
+نوف 25 03:35:01 islam-GF63-Thin-10SC systemd[1]: Stopped Docker Application Container Engine.
+نوف 25 03:35:01 islam-GF63-Thin-10SC systemd[1]: docker.service: Consumed 1.717s CPU time.
+[0;1;39m-- Boot 6a9d75e3633a4ab1ad868fd9c0d37b4e --[0m
+نوف 25 12:09:29 islam-GF63-Thin-10SC systemd[1]: Starting Docker Application Container Engine...
+نوف 25 12:09:29 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T12:09:29.989063572+02:00" level=info msg="Starting up"
+نوف 25 12:09:29 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T12:09:29.992619338+02:00" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+نوف 25 12:09:30 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T12:09:30.035266708+02:00" level=info msg="Loading containers: start."
+نوف 25 12:09:30 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T12:09:30.343707552+02:00" level=info msg="Loading containers: done."
+نوف 25 12:09:30 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T12:09:30.363876791+02:00" level=info msg="Docker daemon" commit="24.0.5-0ubuntu1~22.04.1" graphdriver=overlay2 version=24.0.5
+نوف 25 12:09:30 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T12:09:30.363944092+02:00" level=info msg="Daemon has completed initialization"
+نوف 25 12:09:30 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T12:09:30.381840478+02:00" level=info msg="API listen on /run/docker.sock"
+نوف 25 12:09:30 islam-GF63-Thin-10SC systemd[1]: Started Docker Application Container Engine.
+نوف 25 15:01:20 islam-GF63-Thin-10SC systemd[1]: Stopping Docker Application Container Engine...
+نوف 25 15:01:20 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T15:01:20.804530136+02:00" level=info msg="Processing signal 'terminated'"
+نوف 25 15:01:20 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T15:01:20.808120475+02:00" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+نوف 25 15:01:20 islam-GF63-Thin-10SC dockerd[1158]: time="2023-11-25T15:01:20.808450773+02:00" level=info msg="Daemon shutdown complete"
+نوف 25 15:01:20 islam-GF63-Thin-10SC systemd[1]: docker.service: Deactivated successfully.
+نوف 25 15:01:20 islam-GF63-Thin-10SC systemd[1]: Stopped Docker Application Container Engine.
+نوف 25 15:01:20 islam-GF63-Thin-10SC systemd[1]: docker.service: Consumed 1.402s CPU time.
+[0;1;39m-- Boot 766f76b56e96444f8a13be5340ffc6ef --[0m
+نوف 25 15:51:27 islam-GF63-Thin-10SC systemd[1]: Starting Docker Application Container Engine...
+نوف 25 15:51:27 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:51:27.118044076+02:00" level=info msg="Starting up"
+نوف 25 15:51:27 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:51:27.119600977+02:00" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+نوف 25 15:51:27 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:51:27.162425450+02:00" level=info msg="[graphdriver] using prior storage driver: overlay2"
+نوف 25 15:51:27 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:51:27.163317544+02:00" level=info msg="Loading containers: start."
+نوف 25 15:51:27 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:51:27.643177071+02:00" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+نوف 25 15:51:27 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:51:27.768772516+02:00" level=info msg="Loading containers: done."
+نوف 25 15:51:27 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:51:27.790804662+02:00" level=info msg="Docker daemon" commit="24.0.5-0ubuntu1~22.04.1" graphdriver=overlay2 version=24.0.5
+نوف 25 15:51:27 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:51:27.791069657+02:00" level=info msg="Daemon has completed initialization"
+نوف 25 15:51:27 islam-GF63-Thin-10SC systemd[1]: Started Docker Application Container Engine.
+نوف 25 15:51:27 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:51:27.809168285+02:00" level=info msg="API listen on /run/docker.sock"
+نوف 25 15:57:20 islam-GF63-Thin-10SC systemd[1]: Stopping Docker Application Container Engine...
+نوف 25 15:57:20 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:57:20.314917084+02:00" level=info msg="Processing signal 'terminated'"
+نوف 25 15:57:20 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:57:20.315484944+02:00" level=info msg="stopping event stream following graceful shutdown" error="<nil>" module=libcontainerd namespace=moby
+نوف 25 15:57:20 islam-GF63-Thin-10SC dockerd[1295]: time="2023-11-25T15:57:20.315681541+02:00" level=info msg="Daemon shutdown complete"
+نوف 25 15:57:20 islam-GF63-Thin-10SC systemd[1]: docker.service: Deactivated successfully.
+نوف 25 15:57:20 islam-GF63-Thin-10SC systemd[1]: Stopped Docker Application Container Engine.
+نوف 25 16:16:04 islam-GF63-Thin-10SC systemd[1]: Starting Docker Application Container Engine...
+نوف 25 16:16:04 islam-GF63-Thin-10SC dockerd[18877]: time="2023-11-25T16:16:04.267663613+02:00" level=info msg="Starting up"
+نوف 25 16:16:04 islam-GF63-Thin-10SC dockerd[18877]: failed to load listeners: no sockets found via socket activation: make sure the service was started by 
