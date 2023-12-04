@@ -12,4 +12,4 @@ def activate(request):
 
 
 def profile(requecst):
-    pass
+    pass 
