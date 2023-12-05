@@ -13,8 +13,12 @@ def signup(request):
     if request.method == "POST":
         form = SignupForm(request.POST)
         if form.is_valid():
-            username = form.changed_data['username']
-            email = form.changed_data['password']
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+
+
+            user = form.save(commit=False)
+            user.is_activate = False
             form.save()
 
 
@@ -25,13 +29,13 @@ def signup(request):
             send_mail(
                 "Activate Your Account",
                 f"welcome {username} \n use this code {profile.code} to activate your account",
-                "from@example.com", # my account
-                ["email"],
+                "islam.124.hamdy@gmail.com",
+                [email],
                 fail_silently=False,
             )
 
 
-            return redirect ('/accounts/{username}/activate')
+            return redirect (f'/accounts/{username}/activate')
 
 
 
@@ -40,8 +44,29 @@ def signup(request):
     return render(request,'registration/register.html',{'form':form})
 
 
+
+
 def activate(request,username):
-    pass
+    profile = Profile.objects.get(user__username=username)
+    if request.method == 'POST':
+        form = ActivationForm(request.POST)
+        if form.is_valid():
+            code = form.cleaned_data['code']
+            if code == profile.code:
+                profile.code = ''
+
+                user = User.objects.get(username=profile.user.username)
+                user.is_activate = True
+                user.save()
+                profile.save()
+                
+                return redirect('/accounts/login')
+            
+    else:
+        form = ActivationForm()
+
+    return render(request, 'registration/activate.html', {'form': form})
+
 
 
 def profile(requecst):

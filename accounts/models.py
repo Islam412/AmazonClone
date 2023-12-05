@@ -10,6 +10,9 @@ class Profile(models.Model):
     image = models.ImageField(upload_to='profile',null=True,blank=True)
     code = models.CharField(max_length=10 ,default=generate_code)
 
+    def __str__(self):
+        return str(self.user)
+
 
 @receiver(post_save,sender=User)
 def create_profile(sender,instance,created,**kwargs):
