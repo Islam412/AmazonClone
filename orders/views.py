@@ -3,11 +3,16 @@ from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404
+from django.conf import settings
 
 # used ajax
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 
+from utils.generate_code import generate_code
+
+
+import stripe
 import datetime
 from .models import Order , OrderDetail , Cart ,CartDetail ,Coupon
 from product.models import Product
@@ -52,6 +57,7 @@ def checkout(request):
     cart = Cart.objects.get(user=request.user,status='InProgress')
     cart_detail = CartDetail.objects.filter(cart=cart)
     delivery_fee = DeliveryFee.objects.last().fee
+    bub_key = settings.STRIPE_API_KEY_PUBLISHABLE
 
     if request.method == 'POST':
         coupon = get_object_or_404(Coupon,code=request.POST['coupon_code'])  # 404
@@ -81,6 +87,7 @@ def checkout(request):
                     'cart_total':total,
                     'coupon':coupon_value,
                     'delivery_fee':delivery_fee,
+                    'bub_key':bub_key,
                 })
                 return JsonResponse({'result':html})
 
@@ -105,4 +112,58 @@ def checkout(request):
         'cart_total':delivery_fee + cart.cart_total(),
         'coupon':0,
         'delivery_fee':delivery_fee,
+        'bub_key':bub_key,
     })
+
+
+def process_payment(request):
+    cart = Cart.objects.get(user=request.user,status='InProgress')
+    cart_detail = CartDetail.objects.filter(cart=cart)
+    delivery_fee = DeliveryFee.objects.last().fee
+
+    if cart.total_after_coupon:
+        total = cart.total_after_coupon + delivery_fee
+
+    else:
+        total = cart.cart_total() + delivery_fee
+
+    code = generate_code()
+
+    stripe.api_key = settings.STRIPE_API_KEY_SECRET
+
+
+
+    items = [
+        {
+            'price_data' : {
+                'currency': 'usd',
+                'product_data': {
+                'name': code,
+                },
+                'unit_amount': int(total*100),
+            },
+        'quantity': 1,
+        }
+    ]
+
+    checkout_session = stripe.checkout.Session.create(
+        line_items=items,
+        mode='payment',
+        success_url="http://127.0.01:8000/orders/checkout/payment/success",
+        cancel_url="http://127.0.01:8000/orders/checkout/payment/faild"
+    )
+
+
+
+    return JsonResponse({'session':checkout_session})
+
+
+
+def payment_success(request):
+    return redirect(request,'orders/success.html',{})
+
+
+
+
+def payment_failed(request):
+    return redirect(request,'orders/failed.html',{})

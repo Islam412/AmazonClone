@@ -232,3 +232,10 @@ EMAIL_HOST_PASSWORD = 'vyztgfsvwvhujxkth'   # Use the correct password or app pa
 EMAIL_USE_TLS = True
 EMAIL_PORT = '587'
 
+
+
+
+# payment----->stripe
+# STRIPE SETTINGS
+STRIPE_API_KEY_PUBLISHABLE = 'pk_test_51OK8ZPGjAFyOrV1SUjIoHN0kWvZcwtApbfVBHb8DgLIOO2l2FbDabSMFIw3mzDI5S0yCrORWxOjdqV88bh1CVUAQ00uNuoDQGY'
+STRIPE_API_KEY_SECRET = 'sk_test_51OK8ZPGjAFyOrV1SjdsAiKRyqASR0WrdGpeyCXVJU5u0oXgrRZECOISKH7xmAsp6Birc8SmDH3LOFT06rRg3l0lf00KykeswsK'
