@@ -164,7 +164,7 @@ def add_review(request,slug):
 
     # reviews with ajax
     reviews = Review.objects.filter(product=product)
-    html = render_to_string('include/reviews_include.html',{'reviews':reviews})
+    html = render_to_string('include/reviews_include.html',{'reviews':reviews , request:request})
     return JsonResponse({'result':html})
 
     # return redirect(f'/product/{product.slug}')

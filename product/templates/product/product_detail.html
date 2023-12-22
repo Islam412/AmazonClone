@@ -129,7 +129,6 @@
                         </div>
                         <div class="product-details-frame">
                             <h3 class="frame-title">add your review</h3>
-                            <form class="review-form" method="post" action="{% url 'products:add-review' object.slug %}">
                             <form id="review_form" class="review-form" method="post" action="{% url 'products:add-review' object.slug %}">
                                 {% csrf_token %}
                                 <div class="row">
@@ -288,7 +287,7 @@
                         data: $(this).serialize(),
                         dataType: 'json',
                         success:function(response){
-                            $(#'all_reviews').html(response['result'])
+                            $('#all_reviews').html(response['result'])
                             $('#review_form').trigger('reset');
                         },
                         error:function(){
