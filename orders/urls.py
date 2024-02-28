@@ -1,5 +1,5 @@
 from django.urls import path
-#from . import views
+# from . import views
 from .views import OrderList,checkout,add_to_cart,remove_from_cart,remove_from_cart_checkout , process_payment , payment_failed , payment_success
 from .api import CartDetailCreateAPI,OrderListAPI,OrderDetailAPI,CreateOrderAPI,ApplyCouponAPI
 
